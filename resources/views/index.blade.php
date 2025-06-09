@@ -11,20 +11,24 @@
     <title>Главная</title>
 
     <!--Bootstrap style-->
-    @vite('resources/css/bootstrap.css');
+    @vite('resources/css/bootstrap.css')
     
     <!--App script-->
-    @vite('resources/js/app.js');
+    @vite('resources/js/app.js')
        
-    <!--Bootstrap, CardCarousel and Jquery JS-->
-    
+    <!--Bootstrap, CardCarousel JS-->
+    @vite('resources/js/bootstrap.bundle.min.js')
+    @vite('resources/js/cardcarousel.js')
 
     <!-- Font Awesome Cdn -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
-    
+
+    <!--Jquery JS-->
+    @vite('resources/js/jquery.js')
+
     <!--Google Fonts-->
     <link
       rel="stylesheet"
@@ -32,9 +36,10 @@
     />
     
     <!--Custom CSS style-->
-    @vite('resources/css/app.css');
+    @vite('resources/css/app.css')
 
   </head>
+
 <body class="vh-100 bg-CustomDark">
     <!--NavBar-->
     <section id="navbar">
@@ -107,6 +112,82 @@
           </div>
         </div>
       </nav>
+    </section>
+
+    
+    <!--Slider BG-->
+    <section id="slider">
+      <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#hero-carousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#hero-carousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#hero-carousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+
+        <!--Slider Items-->
+        <div class="carousel-inner">
+          @foreach ($carousels as $carousels)
+          <div class="carousel-item active c-item">
+            <img
+              src="/img/banner.jpg"
+              class="d-block w-100 c-img"
+              alt="Slide {{$carousels->image}}"
+            />
+            <!--Slider Item 1-->
+            <div
+              class="carousel-caption text-CustomWhite text-center text-lg-start top-0 mt-lg-4 mx-lg-4 pt-lg-5 px-lg-5"
+            >
+              <h1 class="display-1 fw-bolder headlines">{{$carousels->name}}</h1>
+              <p class="mt-2 mt-lg-5 fs-5 text-uppercase">
+                {{$carousels->description}}
+              </p>
+              <button
+                class="btn btn-CustomDimPrimary text-CustomDark headlines px-4 py-2 fs-5 mt-2 ms-lg-5 mt-lg-5"
+              >
+                Заказать
+              </button>
+            </div>
+          </div>
+          @endforeach
+          
+        </div>
+        <!--Slider Buttons-->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#hero-carousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#hero-carousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </section>
 
     

@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-BDRWikJi.css",
+    "file": "assets/app-hXl417eO.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -13,6 +13,24 @@
     "file": "assets/app-T1DpEqax.js",
     "name": "app",
     "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/bootstrap.bundle.min.js": {
+    "file": "assets/bootstrap.bundle.min-DT6Zyp-t.js",
+    "name": "bootstrap.bundle.min",
+    "src": "resources/js/bootstrap.bundle.min.js",
+    "isEntry": true
+  },
+  "resources/js/cardcarousel.js": {
+    "file": "assets/cardcarousel-C43T5Z8M.js",
+    "name": "cardcarousel",
+    "src": "resources/js/cardcarousel.js",
+    "isEntry": true
+  },
+  "resources/js/jquery.js": {
+    "file": "assets/jquery-DemgX8Vk.js",
+    "name": "jquery",
+    "src": "resources/js/jquery.js",
     "isEntry": true
   }
 }

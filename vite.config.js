@@ -7,7 +7,10 @@ export default defineConfig({
             input: [
                 'resources/css/app.css', 
                 'resources/css/bootstrap.css',
-                'resources/js/app.js'
+                'resources/js/app.js',
+                'resources/js/cardcarousel.js',
+                'resources/js/jquery.js',
+                'resources/js/bootstrap.bundle.min.js'
             ],
             refresh: true,
         }),
