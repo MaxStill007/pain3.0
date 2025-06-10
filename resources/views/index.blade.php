@@ -263,7 +263,48 @@
       </div>
     </section>
 
-    
+    <!--Product Example-->
+    <section class="my-md-5" id="example">
+      <div class="my-5 pt-5">
+        <h5 class="text-CustomPrimary text-center">Наши продукты</h5>
+        <h1 class="text-CustomWhite text-center headlines mx-5 px-3">
+          Популярные приложения
+        </h1>
+      </div>
+
+      <div class="mt-5 mx-auto CustomWidth">
+        <div class="row">
+          @foreach ($popular as $popular)
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card bg-CustomBrown border-0">
+              <img src="/img/{{$popular->image}}" class="card-img-center m-4 float-center rounded-2" alt="" />
+              <div class="card-body text-CustomWhite">
+                <h3 class="headlines">{{$popular->name}}</h3>
+                <p>{{$popular->description}}</p>
+                                
+                <button
+                  class="btn btn-CustomDimPrimary text-CustomWhite headlines fs-6 mt-3 mx-auto px-4 py-3 rounded-3 d-flex aligh-items-center justify-content-center"
+                  onclick="location.href='#'"
+                >
+                  <span class="material-icons-outlined pe-2">search</span>
+                  Подробности
+                </button>
+              </div>
+            </div>
+          </div>
+          @endforeach
+          </div>
+        </div>
+      </div>
+      <div class="container CustomWidth mt-3 mt-md-5 d-flex aligh-items-center justify-content-center">
+        <button
+          class="btn btn-CustomDimPrimary text-CustomWhite text-uppercase headlines fs-6 px-3 py-3 rounded-4 d-flex aligh-items-center"
+          onclick="location.href='/product'"
+        >
+          Все продукты
+        </button>
+      </div>
+    </section>
 
 
     <!-- Section Types Start-->
