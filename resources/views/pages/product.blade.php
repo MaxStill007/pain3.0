@@ -10,32 +10,24 @@
     <title>Портфолио</title>
 
     <!--Bootstrap style-->
-    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    @vite('resources/css/bootstrap.css')
     
-    <!--Bootstrap script-->
-    <script
-      defer
-      src="/js/bootstrap.bundle.min.js"
-    ></script>
+    <!--App script-->
+    @vite('resources/js/app.js')
+       
+    <!--Bootstrap, CardCarousel JS-->
+    @vite('resources/js/bootstrap.bundle.min.js')
+    @vite('resources/js/cardcarousel.js')
 
-    <!--JQuery script-->
-    <script
-      defer
-      src="/js/jquery.js"
-    ></script>
-
-    <!--Custom JS script-->
-    <script
-      defer
-      src="/js/cardcarousel.js"
-    ></script>
-    
     <!-- Font Awesome Cdn -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
-    
+
+    <!--Jquery JS-->
+    @vite('resources/js/jquery.js')
+
     <!--Google Fonts-->
     <link
       rel="stylesheet"
@@ -43,7 +35,8 @@
     />
     
     <!--Custom CSS style-->
-    <link rel="stylesheet" href="/css/style.css" />
+    @vite('resources/css/app.css')
+
   </head>
 
   <body class="vh-100 bg-CustomDark">
@@ -163,24 +156,17 @@
           @foreach ($product as $product)
           <div class="col-md-4 py-3 my-3 py-md-0">
             <div class="card bg-CustomBrown border-0">
-              <img src="{{$product->image}}" class="card-img-center m-4 float-center rounded-2" alt="" />
+              <img src="/img/{{$product->image}}" class="card-img-center m-4 float-center rounded-2" alt="" />
               <div class="card-body text-CustomWhite">
                 <h3 class="headlines">{{$product->name}}</h3>
                 <p>{{$product->description}}</p>
-                <ul class="mb-2 ps-0">
-                  <li class="rating_item material-icons-outlined">star</li>
-                  <li class="rating_item material-icons-outlined">star</li>
-                  <li class="rating_item material-icons-outlined">star</li>
-                  <li class="rating_item material-icons-outlined">star</li>
-                  <li class="rating_item material-icons-outlined">star_border</li>
-                </ul>
-                <h6 class="text-uppercase">Цена - <strong class="text-CustomPrimary">${{$product->discount}}/</strong>${{$product->price}}</h6>
+                                
                 <button
                   class="btn btn-CustomDimPrimary text-CustomWhite headlines fs-6 mt-3 mx-auto px-4 py-3 rounded-3 d-flex aligh-items-center justify-content-center"
                   onclick="location.href='#'"
                 >
-                  <span class="material-icons-outlined pe-2">local_mall</span>
-                  Заказать
+                  <span class="material-icons-outlined pe-2">search</span>
+                  Подробности
                 </button>
               </div>
             </div>

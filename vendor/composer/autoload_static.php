@@ -562,8 +562,20 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
     );
 
     public static $classMap = array (
+        'App\\Http\\Controllers\\Admin\\MainpageCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/MainpageCrudController.php',
+        'App\\Http\\Controllers\\Admin\\ProductsCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProductsCrudController.php',
+        'App\\Http\\Controllers\\Admin\\SocialsCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SocialsCrudController.php',
+        'App\\Http\\Controllers\\Admin\\UserCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserCrudController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\PageController' => __DIR__ . '/../..' . '/app/Http/Controllers/PageController.php',
         'App\\Http\\Middleware\\CheckIfAdmin' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckIfAdmin.php',
+        'App\\Http\\Requests\\MainpageRequest' => __DIR__ . '/../..' . '/app/Http/Requests/MainpageRequest.php',
+        'App\\Http\\Requests\\ProductsRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProductsRequest.php',
+        'App\\Http\\Requests\\SocialsRequest' => __DIR__ . '/../..' . '/app/Http/Requests/SocialsRequest.php',
+        'App\\Http\\Requests\\UserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UserRequest.php',
+        'App\\Models\\Mainpage' => __DIR__ . '/../..' . '/app/Models/Mainpage.php',
+        'App\\Models\\Products' => __DIR__ . '/../..' . '/app/Models/Products.php',
+        'App\\Models\\Socials' => __DIR__ . '/../..' . '/app/Models/Socials.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',

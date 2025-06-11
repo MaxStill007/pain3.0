@@ -21,5 +21,9 @@ class PageController extends Controller
         return view('index', ['carousels' => $carousels, 'roadmap' => $roadmap, 'types' => $types, 'social' => $social, 'popular' => $popular]);
     }
 
-
+    public function product(){
+        $social = DB::table('socials')->get();
+        $product = DB::table('products')->inRandomOrder()->get();
+        return view('pages.product', ['product' => $product, 'social' => $social]);
+    }
 }

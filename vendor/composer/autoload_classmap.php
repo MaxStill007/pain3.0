@@ -6,8 +6,20 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Http\\Controllers\\Admin\\MainpageCrudController' => $baseDir . '/app/Http/Controllers/Admin/MainpageCrudController.php',
+    'App\\Http\\Controllers\\Admin\\ProductsCrudController' => $baseDir . '/app/Http/Controllers/Admin/ProductsCrudController.php',
+    'App\\Http\\Controllers\\Admin\\SocialsCrudController' => $baseDir . '/app/Http/Controllers/Admin/SocialsCrudController.php',
+    'App\\Http\\Controllers\\Admin\\UserCrudController' => $baseDir . '/app/Http/Controllers/Admin/UserCrudController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\PageController' => $baseDir . '/app/Http/Controllers/PageController.php',
     'App\\Http\\Middleware\\CheckIfAdmin' => $baseDir . '/app/Http/Middleware/CheckIfAdmin.php',
+    'App\\Http\\Requests\\MainpageRequest' => $baseDir . '/app/Http/Requests/MainpageRequest.php',
+    'App\\Http\\Requests\\ProductsRequest' => $baseDir . '/app/Http/Requests/ProductsRequest.php',
+    'App\\Http\\Requests\\SocialsRequest' => $baseDir . '/app/Http/Requests/SocialsRequest.php',
+    'App\\Http\\Requests\\UserRequest' => $baseDir . '/app/Http/Requests/UserRequest.php',
+    'App\\Models\\Mainpage' => $baseDir . '/app/Models/Mainpage.php',
+    'App\\Models\\Products' => $baseDir . '/app/Models/Products.php',
+    'App\\Models\\Socials' => $baseDir . '/app/Models/Socials.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
