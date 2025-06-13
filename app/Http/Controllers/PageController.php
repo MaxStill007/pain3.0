@@ -21,9 +21,33 @@ class PageController extends Controller
         return view('index', ['carousels' => $carousels, 'roadmap' => $roadmap, 'types' => $types, 'social' => $social, 'popular' => $popular]);
     }
 
-    public function product(){
+    public function product(Request $request)
+    {
         $social = DB::table('socials')->get();
-        $product = DB::table('products')->inRandomOrder()->get();
-        return view('pages.product', ['product' => $product, 'social' => $social]);
+        
+        // Получаем категории из конфига
+        $categories = config('products.categories');
+        
+        // Получаем выбранную категорию из запроса
+        $category = $request->input('category');
+        
+        // Проверяем валидность категории
+        $validCategory = ($category && array_key_exists($category, $categories)) ? $category : null;
+        
+        // Строим запрос с фильтром
+        $query = DB::table('products');
+        
+        if ($validCategory) {
+            $query->where('category_id', $validCategory);
+        }
+        
+        $products = $query->inRandomOrder()->get();
+
+        return view('pages.product', [
+            'products' => $products,
+            'social' => $social,
+            'categories' => $categories,
+            'activeCategory' => $validCategory
+        ]);
     }
 }

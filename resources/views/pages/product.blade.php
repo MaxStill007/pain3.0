@@ -150,10 +150,25 @@
         </h1>
       </div>
 
+
+      <div class="flex space-x-4 mb-8">
+      <a href="{{ route('product.page') }}" 
+       class="px-4 py-2 rounded-lg {{ !$activeCategory ? 'bg-blue-500 text-white' : 'bg-gray-200' }}">
+        Все продукты
+      </a>
+    
+      @foreach($categories as $key => $name)
+        <a href="{{ route('product.page', ['category' => $key]) }}" 
+           class="px-4 py-2 rounded-lg {{ $activeCategory === $key ? 'bg-blue-500 text-white' : 'bg-gray-200' }}">
+            {{ $name }}
+        </a>
+      @endforeach
+      </div>
+
       
       <div class="mt-5 mx-auto CustomWidth">
         <div class="row">
-          @foreach ($product as $product)
+          @foreach ($products as $product)
           <div class="col-md-4 py-3 my-3 py-md-0">
             <div class="card bg-CustomBrown border-0">
               <img src="/img/{{$product->image}}" class="card-img-center m-4 float-center rounded-2" alt="" />
