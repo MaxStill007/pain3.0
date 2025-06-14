@@ -99,3 +99,12 @@ body {
     transform: translateY(-50%);
 }
 
+.btn-details {
+    transition: all 0.3s ease;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+@media (max-width: 1200px) { .btn-details { padding: 0.6rem 1.2rem; font-size: 0.95rem; } }
+@media (max-width: 992px)  { .btn-details { padding: 0.5rem 1rem;   font-size: 0.9rem;  } }
+@media (max-width: 768px)  { .btn-details { padding: 0.4rem 0.8rem; font-size: 0.85rem; } }
+@media (max-width: 576px)  { .btn-details { padding: 0.3rem 0.6rem; font-size: 0.8rem;  } }
