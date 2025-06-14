@@ -18,6 +18,7 @@
     <!--Bootstrap, CardCarousel JS-->
     @vite('resources/js/bootstrap.bundle.min.js')
     @vite('resources/js/cardcarousel.js')
+    @vite('resources/js/modal.js')
 
     <!-- Font Awesome Cdn -->
     <link
@@ -177,12 +178,17 @@
                 <h3 class="headlines">{{$product->name}}</h3>
                 <p>{{$product->description}}</p>
                                 
-                <button
-                  class="btn btn-CustomDimPrimary text-CustomWhite headlines fs-6 mt-3 mx-auto px-4 py-3 rounded-3 d-flex aligh-items-center justify-content-center"
-                  onclick="location.href='#'"
-                >
+                <button class="btn btn-CustomDimPrimary text-CustomWhite headlines fs-6 mt-3 mx-auto px-4 py-3 rounded-3 d-flex aligh-items-center justify-content-center"
+                  data-bs-toggle="modal" data-bs-target="#productModal"
+                  data-product-id="{{ $product->id }}"
+                  data-product-name="{{ $product->name }}"
+                  data-product-date="{{ $product->created_at }}"
+                  data-product-description="{{ $product->description }}"
+                  data-product-image="/img/{{ $product->image }}"
+                  
+                  >
                   <span class="material-icons-outlined pe-2">search</span>
-                  Подробности
+                    Подробности
                 </button>
               </div>
             </div>
@@ -219,5 +225,29 @@
         </div>
       </footer>
     </section>
+
+
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content bg-CustomDark text-CustomWhite">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalProductName"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Здесь будет контент модального окна -->
+            <p id="modalProductDate"></p>
+            <p id="modalProductDescription"></p>
+            <img id="modalProductImage" src="" alt="Product Image" class="img-fluid">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-CustomDimPrimary text-CustomWhite text-center headlines" data-bs-dismiss="modal">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>

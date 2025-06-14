@@ -10,7 +10,8 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/js/cardcarousel.js',
                 'resources/js/jquery.js',
-                'resources/js/bootstrap.bundle.min.js'
+                'resources/js/bootstrap.bundle.min.js',
+                'resources/js/modal.js'
             ],
             refresh: true,
         }),

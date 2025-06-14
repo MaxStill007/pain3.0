@@ -32,5 +32,11 @@
     "name": "jquery",
     "src": "resources/js/jquery.js",
     "isEntry": true
+  },
+  "resources/js/modal.js": {
+    "file": "assets/modal-CV4mm8iC.js",
+    "name": "modal",
+    "src": "resources/js/modal.js",
+    "isEntry": true
   }
 }
