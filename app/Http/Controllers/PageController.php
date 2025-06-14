@@ -41,7 +41,7 @@ class PageController extends Controller
             $query->where('category_id', $validCategory);
         }
         
-        $products = $query->inRandomOrder()->get();
+        $products = $query->get();
 
         return view('pages.product', [
             'products' => $products,

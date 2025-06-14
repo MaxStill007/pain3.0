@@ -150,21 +150,22 @@
         </h1>
       </div>
 
-
-      <div class="flex space-x-4 mb-8">
-      <a href="{{ route('product.page') }}" 
-       class="px-4 py-2 rounded-lg {{ !$activeCategory ? 'bg-blue-500 text-white' : 'bg-gray-200' }}">
-        Все продукты
-      </a>
-    
-      @foreach($categories as $key => $name)
-        <a href="{{ route('product.page', ['category' => $key]) }}" 
-           class="px-4 py-2 rounded-lg {{ $activeCategory === $key ? 'bg-blue-500 text-white' : 'bg-gray-200' }}">
-            {{ $name }}
-        </a>
-      @endforeach
+      <div class="container CustomWidth mt-3 mt-md-5">
+        <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+        
+          <a href="{{ route('product.page') }}" 
+              class="btn headlines fs-6 px-4 py-3 rounded-3 {{ !$activeCategory ? 'btn-CustomDimPrimary text-CustomWhite' : 'btn-light text-dark' }}">
+              Все продукты
+          </a>
+        
+          @foreach($categories as $key => $name)
+            <a href="{{ route('product.page', ['category' => $key]) }}" 
+               class="btn headlines fs-6 px-4 py-3 rounded-3 {{ $activeCategory === $key ? 'btn-CustomDimPrimary text-CustomWhite' : 'btn-light text-dark' }}">
+                {{ $name }}
+            </a>
+          @endforeach
+        </div>
       </div>
-
       
       <div class="mt-5 mx-auto CustomWidth">
         <div class="row">
