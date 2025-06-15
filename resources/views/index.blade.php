@@ -88,9 +88,6 @@
                   >
                 </li>
                 <li class="nav-item mx-2">
-                  <a class="nav-link" href="/about">О нас</a>
-                </li>
-                <li class="nav-item mx-2">
                   <a class="nav-link" href="/product">Портфолио</a>
                 </li>
                 <li class="nav-item mx-2">
