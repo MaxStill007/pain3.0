@@ -37,7 +37,8 @@
     />
     
     <!--Custom CSS style-->
-    @vite('resources/css/app.css')
+    @vite('resources/css/style.css')
+
 
   </head>
 
@@ -99,12 +100,34 @@
               </ul>
 
               <div class="d-flex">
-                <a
-                  class="btn btn-CustomPrimary text-CustomDark text-center headlines fs-6 px-4 pt-2 rounded-4"
-                  href="#CustomOrder"
-                >
-                  Заказать звонок
-                </a>
+                @if (Route::has('login'))
+                            <nav class="d-flex flex-wrap justify-content-center gap-3">
+                                @auth
+                                    <a
+                                        href="{{ url('/home') }}"
+                                        class="btn btn-CustomDimPrimary text-CustomWhite headlines fs-6 mx-auto px-3 py-2 rounded-3 d-flex aligh-items-center justify-content-center"
+                                    >
+                                        Мой профиль
+                                    </a>
+                                @else
+                                    <a
+                                        href="{{ route('login') }}"
+                                        class="btn btn-CustomDimPrimary text-CustomWhite headlines fs-6 mx-auto px-3 py-2 rounded-3 d-flex aligh-items-center justify-content-center"
+                                    >
+                                        Вход
+                                    </a>
+
+                                    @if (Route::has('register'))
+                                        <a
+                                            href="{{ route('register') }}"
+                                            class="btn btn-CustomDimPrimary text-CustomWhite headlines fs-6 mx-auto px-3 py-2 rounded-3 d-flex aligh-items-center justify-content-center"
+                                        >
+                                            Регистрация
+                                        </a>
+                                    @endif
+                                @endauth
+                            </nav>
+                  @endif
               </div>
             </div>
           </div>
