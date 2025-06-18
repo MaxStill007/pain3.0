@@ -199,12 +199,12 @@
                 <button class="btn btn-CustomDimPrimary text-CustomWhite headlines fs-6 mt-3 mx-auto px-4 py-3 rounded-3 d-flex aligh-items-center justify-content-center"
                   data-bs-toggle="modal" data-bs-target="#productModal"
                   data-product-id="{{ $product->id }}"
-                  data-product-category="{{ $product->category_id }}"
+                  data-product-category="{{ $product->category }}"
                   data-product-name="{{ $product->name }}"
                   data-product-date="{{ $product->created_at }}"
                   data-product-description="{{ $product->description }}"
                   data-product-image="/img/{{ $product->image }}"
-                  
+                  data-product-stack="{{ $product->techstack }}"
                   >
                   <span class="material-icons-outlined pe-2">search</span>
                     Подробности
@@ -270,6 +270,10 @@
                                 <p id="modalCategValue" class="text-light mb-0">
                                     <i class="bi bi-calendar me-2"></i>Категория программного обеспечения:
                                     <span id="modalProductCategory" class="ms-2"></span>
+                                </p>
+                                <p id="modalStackValue" class="text-light mb-0">
+                                    <i class="bi bi-calendar me-2"></i>Используемые технологии:
+                                    <span id="modalProductStack" class="ms-2"></span>
                                 </p>
                                 <p id="modalDateValue" class="text-light mb-0">
                                     <i class="bi bi-calendar me-2"></i>Дата релиза проекта:

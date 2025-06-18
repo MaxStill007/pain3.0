@@ -38,7 +38,7 @@ class PageController extends Controller
         $query = DB::table('products');
         
         if ($validCategory) {
-            $query->where('category_id', $validCategory);
+            $query->where('category', $validCategory);
         }
         
         $products = $query->get();
