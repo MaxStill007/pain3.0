@@ -48,7 +48,10 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
         <div class="container">
           <!--Logo-->
-          <a class="navbar-brand" href="/">Logo</a>
+          <a class="navbar-brand d-flex align-items-center me-0"  href="/">
+            <img src="/img/logo.svg" class="me-2" style="width: 40px; height: 40px; object-fit: contain" alt="PowerApp Logo" />
+            <h4 class="headlines mb-0">PowerApp</h4>
+          </a>
           <!--Toggle Btn-->
           <button
             class="navbar-toggler shadow-none border-0"
@@ -70,7 +73,9 @@
           >
             <!--SideBar Header-->
             <div class="offcanvas-header text-CustomWhite border-bottom">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5>
+              <img src="/img/logo.svg" class="me-2" style="width: 40px; height: 40px; object-fit: contain" alt="PowerApp Logo" />
+              <h4 class="offcanvas-title headlines mb-0" id="offcanvasNavbarLabel">PowerApp</h4>
+              
               <button
                 type="button"
                 class="btn-close btn-close-CustomWhite shadow-none"
