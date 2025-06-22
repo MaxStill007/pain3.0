@@ -5,3 +5,4 @@
 <x-backpack::menu-item title="Products" icon="la la-box" :link="backpack_url('products')" />
 <x-backpack::menu-item title="Mainpages" icon="la la-wpforms" :link="backpack_url('mainpage')" />
 <x-backpack::menu-item title="Socials" icon="la la-youtube" :link="backpack_url('socials')" />
+<x-backpack::menu-item title="Orders" icon="la la-address-book " :link="backpack_url('orders')" />

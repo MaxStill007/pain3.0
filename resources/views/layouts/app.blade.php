@@ -13,6 +13,34 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+    <!--Bootstrap style-->
+    @vite('resources/css/bootstrap.css')
+    
+    <!--App script-->
+    @vite('resources/js/app.js')
+       
+    <!--CardCarousel JS-->
+    @vite('resources/js/cardcarousel.js')
+    @vite('resources/js/modal.js')
+
+    <!-- Font Awesome Cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+
+    <!--Jquery JS-->
+    @vite('resources/js/jquery.js')
+
+    <!--Google Fonts-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined"
+    />
+    
+    <!--Custom CSS style-->
+    @vite('resources/css/style.css')
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -21,7 +49,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'PowerApp') }}
+                    {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -35,6 +63,11 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                        @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('order.create') }}">{{ __('Новый заказ') }}</a>
+                        </li>
+                        @endauth
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -68,6 +101,9 @@
                             </li>
                         @endguest
                     </ul>
+                    
+
+                    
                 </div>
             </div>
         </nav>
