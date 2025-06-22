@@ -7,6 +7,10 @@ use App\Http\Controllers\PageController;
 Route::get('/', [PageController::class, 'index']);
 Route::get('/product', [PageController::class, 'product'])->name('product.page');
 
-Auth::routes();
+// Включение маршрутов верификации
+Auth::routes(['verify' => true]); // Добавлен параметр verify
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Защищаем маршрут верификацией email
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
+    ->name('home')
+    ->middleware(['auth', 'verified']); // Добавлен middleware 'verified'

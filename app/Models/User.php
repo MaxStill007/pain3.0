@@ -3,16 +3,17 @@
 namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail as MustVerifyEmailContract; // Изменено имя интерфейса
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Auth\MustVerifyEmail; // Трейт верификации
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmailContract // Используем интерфейс с новым именем
 {
     use CrudTrait;
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, MustVerifyEmail; // Используем трейт верификации
 
     /**
      * The attributes that are mass assignable.
