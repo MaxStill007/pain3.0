@@ -13,6 +13,11 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+    
+    <link rel="icon" href="{{ asset('img/logo.svg') }}" type="image/svg+xml">
+    <link rel="icon" href="{{ asset('img/logo.svg') }}" type="image/svg+xml" sizes="any">
+
+
     <!--Bootstrap style-->
     @vite('resources/css/bootstrap.css')
     

@@ -6,8 +6,11 @@
     <meta name="keywords" content="Купить, Заказать, ПО, игра, мобильное приложение, программа, VR, веб-страница, сайт">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="180">
-        
-    <title>Портфолио</title>
+    
+    <link rel="icon" href="{{ asset('img/logo.svg') }}" type="image/svg+xml">
+    <link rel="icon" href="{{ asset('img/logo.svg') }}" type="image/svg+xml" sizes="any">
+
+    <title>Блог</title>
 
     <!--Bootstrap style-->
     @vite('resources/css/bootstrap.css')

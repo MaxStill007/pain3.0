@@ -52,7 +52,7 @@
                         </div>
 
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-CustomPrimary text-white py-2 fw-bold">
+                            <button type="submit" class="btn btn-CustomPrimary text-white border-CustomPrimary py-2 fw-bold">
                                 {{ __('Создать заказ') }}
                             </button>
                         </div>
