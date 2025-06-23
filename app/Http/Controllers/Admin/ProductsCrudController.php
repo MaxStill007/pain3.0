@@ -57,11 +57,8 @@ class ProductsCrudController extends CrudController
     {
         CRUD::setValidation(ProductsRequest::class);
         CRUD::setFromDb(); // set fields from db columns.
-
-        /**
-         * Fields can be defined using the fluent syntax:
-         * - CRUD::field('price')->type('number');
-         */
+        CRUD::field('image')->type('upload');
+        
     }
 
     /**

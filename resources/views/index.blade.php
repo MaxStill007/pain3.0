@@ -37,7 +37,8 @@
     />
     
     <!--Custom CSS style-->
-    @vite('resources/css/app.css')
+    @vite('resources/css/style.css')
+
 
   </head>
 
@@ -47,7 +48,10 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
         <div class="container">
           <!--Logo-->
-          <a class="navbar-brand" href="/">Logo</a>
+          <a class="navbar-brand d-flex align-items-center me-0"  href="{{ url('/') }}">
+            <img src="/img/logo.svg" class="me-2" style="width: 40px; height: 40px; object-fit: contain" alt="PowerApp Logo" />
+            <h4 class="headlines mb-0">PowerApp</h4>
+          </a>
           <!--Toggle Btn-->
           <button
             class="navbar-toggler shadow-none border-0"
@@ -69,7 +73,9 @@
           >
             <!--SideBar Header-->
             <div class="offcanvas-header text-CustomWhite border-bottom">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5>
+              <img src="/img/logo.svg" class="me-2" style="width: 40px; height: 40px; object-fit: contain" alt="PowerApp Logo" />
+              <h4 class="offcanvas-title headlines mb-0" id="offcanvasNavbarLabel">PowerApp</h4>
+              
               <button
                 type="button"
                 class="btn-close btn-close-CustomWhite shadow-none"
@@ -83,18 +89,15 @@
                 class="navbar-nav text-nowrap justify-content-center aligh-items-center fs-5 flex-grow-1 pe-3"
               >
                 <li class="nav-item mx-2">
-                  <a class="nav-link active" aria-current="page" href="/"
+                  <a class="nav-link active" aria-current="page" href="{{ url('/') }}"
                     >Главная</a
                   >
                 </li>
                 <li class="nav-item mx-2">
-                  <a class="nav-link" href="/about">О нас</a>
+                  <a class="nav-link" href="{{ url('/product') }}">Портфолио</a>
                 </li>
                 <li class="nav-item mx-2">
-                  <a class="nav-link" href="/product">Портфолио</a>
-                </li>
-                <li class="nav-item mx-2">
-                  <a class="nav-link" href="/review">Блог</a>
+                  <a class="nav-link" href="{{ url('/blog') }}">Блог</a>
                 </li>
                 <li class="nav-item mx-2">
                   <a class="nav-link" href="#">Контакты</a>
@@ -102,12 +105,34 @@
               </ul>
 
               <div class="d-flex">
-                <a
-                  class="btn btn-CustomPrimary text-CustomDark text-center headlines fs-6 px-4 pt-2 rounded-4"
-                  href="#CustomOrder"
-                >
-                  Заказать звонок
-                </a>
+                @if (Route::has('login'))
+                            <nav class="d-flex flex-wrap justify-content-center gap-3">
+                                @auth
+                                    <a
+                                        href="{{ url('/home') }}"
+                                        class="btn btn-CustomDimPrimary text-CustomWhite headlines fs-6 mx-auto px-3 py-2 rounded-3 d-flex aligh-items-center justify-content-center"
+                                    >
+                                        Мой профиль
+                                    </a>
+                                @else
+                                    <a
+                                        href="{{ route('login') }}"
+                                        class="btn btn-CustomDimPrimary text-CustomWhite headlines fs-6 mx-auto px-3 py-2 rounded-3 d-flex aligh-items-center justify-content-center"
+                                    >
+                                        Вход
+                                    </a>
+
+                                    @if (Route::has('register'))
+                                        <a
+                                            href="{{ route('register') }}"
+                                            class="btn btn-CustomDimPrimary text-CustomWhite headlines fs-6 mx-auto px-3 py-2 rounded-3 d-flex aligh-items-center justify-content-center"
+                                        >
+                                            Регистрация
+                                        </a>
+                                    @endif
+                                @endauth
+                            </nav>
+                  @endif
               </div>
             </div>
           </div>
@@ -147,9 +172,9 @@
           @foreach ($carousels as $carousels)
           <div class="carousel-item active c-item">
             <img
-              src="/img/banner.jpg"
+              src="/img/{{$carousels->image}}"
               class="d-block w-100 c-img"
-              alt="Slide {{$carousels->image}}"
+              alt="Slide {{ $loop->iteration }}"
             />
             <!--Slider Item 1-->
             <div
@@ -285,12 +310,12 @@
                 <button class="btn btn-CustomDimPrimary text-CustomWhite headlines fs-6 mt-3 mx-auto px-4 py-3 rounded-3 d-flex aligh-items-center justify-content-center"
                   data-bs-toggle="modal" data-bs-target="#productModal"
                   data-product-id="{{ $product->id }}"
-                  data-product-category="{{ $product->category_id }}"
+                  data-product-category="{{ $product->category}}"
                   data-product-name="{{ $product->name }}"
                   data-product-date="{{ $product->created_at }}"
                   data-product-description="{{ $product->description }}"
                   data-product-image="/img/{{ $product->image }}"
-                  
+                  data-product-stack="{{ $product->techstack }}"
                   >
                   <span class="material-icons-outlined pe-2">search</span>
                     Подробности
@@ -555,6 +580,10 @@
                                 <p id="modalCategValue" class="text-light mb-0">
                                     <i class="bi bi-calendar me-2"></i>Категория программного обеспечения:
                                     <span id="modalProductCategory" class="ms-2"></span>
+                                </p>
+                                <p id="modalStackValue" class="text-light mb-0">
+                                    <i class="bi bi-calendar me-2"></i>Используемые технологии:
+                                    <span id="modalProductStack" class="ms-2"></span>
                                 </p>
                                 <p id="modalDateValue" class="text-light mb-0">
                                     <i class="bi bi-calendar me-2"></i>Дата релиза проекта:

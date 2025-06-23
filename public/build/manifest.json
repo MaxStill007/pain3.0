@@ -1,25 +1,41 @@
 {
-  "resources/css/app.css": {
-    "file": "assets/app-DQoMG_Wo.css",
-    "src": "resources/css/app.css",
-    "isEntry": true
+  "_index-Br2Bnn-U.js": {
+    "file": "assets/index-Br2Bnn-U.js",
+    "name": "index"
   },
   "resources/css/bootstrap.css": {
     "file": "assets/bootstrap-_2OSVFST.css",
     "src": "resources/css/bootstrap.css",
     "isEntry": true
   },
+  "resources/css/style.css": {
+    "file": "assets/style-DQoMG_Wo.css",
+    "src": "resources/css/style.css",
+    "isEntry": true
+  },
   "resources/js/app.js": {
-    "file": "assets/app-T1DpEqax.js",
+    "file": "assets/app-BSF8pfDz.js",
     "name": "app",
     "src": "resources/js/app.js",
-    "isEntry": true
+    "isEntry": true,
+    "imports": [
+      "_index-Br2Bnn-U.js"
+    ]
   },
   "resources/js/bootstrap.bundle.min.js": {
     "file": "assets/bootstrap.bundle.min-DT6Zyp-t.js",
     "name": "bootstrap.bundle.min",
     "src": "resources/js/bootstrap.bundle.min.js",
     "isEntry": true
+  },
+  "resources/js/bootstrap.js": {
+    "file": "assets/bootstrap-BSF8pfDz.js",
+    "name": "bootstrap",
+    "src": "resources/js/bootstrap.js",
+    "isEntry": true,
+    "imports": [
+      "_index-Br2Bnn-U.js"
+    ]
   },
   "resources/js/cardcarousel.js": {
     "file": "assets/cardcarousel-C43T5Z8M.js",
@@ -34,9 +50,14 @@
     "isEntry": true
   },
   "resources/js/modal.js": {
-    "file": "assets/modal-Jl40IrGR.js",
+    "file": "assets/modal-BlVlykyf.js",
     "name": "modal",
     "src": "resources/js/modal.js",
+    "isEntry": true
+  },
+  "resources/sass/app.scss": {
+    "file": "assets/app-B_jciIra.css",
+    "src": "resources/sass/app.scss",
     "isEntry": true
   }
 }

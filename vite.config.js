@@ -5,13 +5,15 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/css/app.css', 
+                'resources/sass/app.scss',
                 'resources/css/bootstrap.css',
-                'resources/js/app.js',
+                'resources/css/style.css',
+                'resources/js/bootstrap.bundle.min.js',
+                'resources/js/bootstrap.js',
                 'resources/js/cardcarousel.js',
                 'resources/js/jquery.js',
-                'resources/js/bootstrap.bundle.min.js',
-                'resources/js/modal.js'
+                'resources/js/modal.js',
+                'resources/js/app.js',
             ],
             refresh: true,
         }),

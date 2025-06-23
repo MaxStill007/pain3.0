@@ -6,6 +6,7 @@ productModal.addEventListener('show.bs.modal', event => {
   const productDate =button.getAttribute('data-product-date');
   const productDescription = button.getAttribute('data-product-description');
   const productImage = button.getAttribute('data-product-image');
+  const productStack = button.getAttribute('data-product-stack');
 
   // Заполняем модальное окно данными
   document.getElementById('modalProductCategory').textContent = productCategory;
@@ -13,4 +14,5 @@ productModal.addEventListener('show.bs.modal', event => {
   document.getElementById('modalProductDate').textContent = productDate;
   document.getElementById('modalProductDescription').textContent = productDescription;
   document.getElementById('modalProductImage').src = productImage;
+  document.getElementById('modalProductStack').textContent = productStack;
 });
