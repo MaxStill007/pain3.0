@@ -12,7 +12,10 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('order.store') }}">
                         @csrf
-
+                        <input type="text" class="d-none" 
+                        value="{{ Auth::user()->name }}" readonly>
+                        <input type="text" class="d-none" 
+                        value="{{ Auth::user()->email }}" readonly>
                         
 
                         <div class="mb-3">
