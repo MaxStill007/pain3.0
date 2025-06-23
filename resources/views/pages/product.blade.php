@@ -45,7 +45,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
         <div class="container">
           <!--Logo-->
-          <a class="navbar-brand d-flex align-items-center me-0"  href="/">
+          <a class="navbar-brand d-flex align-items-center me-0"  href="{{ url('/') }}">
             <img src="/img/logo.svg" class="me-2" style="width: 40px; height: 40px; object-fit: contain" alt="PowerApp Logo" />
             <h4 class="headlines mb-0">PowerApp</h4>
           </a>
@@ -86,15 +86,15 @@
                 class="navbar-nav text-nowrap justify-content-center aligh-items-center fs-5 flex-grow-1 pe-3"
               >
                 <li class="nav-item mx-2">
-                  <a class="nav-link " aria-current="page" href="/"
+                  <a class="nav-link " aria-current="page" href="{{ url('/') }}"
                     >Главная</a
                   >
                 </li>
                 <li class="nav-item mx-2">
-                  <a class="nav-link active" href="/product">Портфолио</a>
+                  <a class="nav-link active" href="{{ url('/product') }}">Портфолио</a>
                 </li>
                 <li class="nav-item mx-2">
-                  <a class="nav-link" href="/review">Блог</a>
+                  <a class="nav-link" href="{{ url('/blog') }}">Блог</a>
                 </li>
                 <li class="nav-item mx-2">
                   <a class="nav-link" href="#">Контакты</a>

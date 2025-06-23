@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\MainpageRequest;
+use App\Http\Requests\BlogsRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class MainpageCrudController
+ * Class BlogsCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class MainpageCrudController extends CrudController
+class BlogsCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class MainpageCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Mainpage::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/mainpage');
-        CRUD::setEntityNameStrings('mainpage', 'mainpages');
+        CRUD::setModel(\App\Models\Blogs::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/blogs');
+        CRUD::setEntityNameStrings('blogs', 'blogs');
     }
 
     /**
@@ -55,7 +55,7 @@ class MainpageCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(MainpageRequest::class);
+        CRUD::setValidation(BlogsRequest::class);
         CRUD::setFromDb(); // set fields from db columns.
         CRUD::field('image')->type('upload');
     }

@@ -24,30 +24,19 @@ class PageController extends Controller
     public function product(Request $request)
     {
         $social = DB::table('socials')->get();
-        
-        // Получаем категории из конфига
         $categories = config('products.categories');
-        
-        // Получаем выбранную категорию из запроса
         $category = $request->input('category');
-        
-        // Проверяем валидность категории
         $validCategory = ($category && array_key_exists($category, $categories)) ? $category : null;
-        
-        // Строим запрос с фильтром
         $query = DB::table('products');
-        
-        if ($validCategory) {
-            $query->where('category', $validCategory);
-        }
-        
+        if ($validCategory) {$query->where('category', $validCategory);}
         $products = $query->get();
-
-        return view('pages.product', [
-            'products' => $products,
-            'social' => $social,
-            'categories' => $categories,
-            'activeCategory' => $validCategory
-        ]);
+        return view('pages.product', ['products' => $products,'social' => $social,'categories' => $categories,'activeCategory' => $validCategory]);
+    }
+    
+    public function blog()
+    {
+        $social = DB::table('socials')->get();
+        $blogs = DB::table('blogs')->get();
+        return view('pages.blog', ['social' => $social, 'blogs' => $blogs]);
     }
 }
