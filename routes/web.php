@@ -19,3 +19,5 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/order/create', [OrderController::class, 'create'])->name('order.create');
     Route::post('/order', [OrderController::class, 'store'])->name('order.store');
 });
+
+Route::get('/blog/{id}', [PageController::class, 'showBlog'])->name('blog.show');

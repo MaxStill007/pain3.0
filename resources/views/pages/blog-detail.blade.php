@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <section id="navbar">
+<section id="navbar">
       <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
         <div class="container">
           <!--Logo-->
@@ -95,55 +95,34 @@
           </div>
         </div>
       </nav>
-    </section>
+</section>
 
-    <section class="my-md-5" id="example">
-      <div class="mb-5 pt-3">
-        <h5 class="text-CustomPrimary text-center">Отдел блогов</h5>
-        <h1 class="text-CustomWhite text-center headlines mx-5 px-3">
-          Наши последние новости
-        </h1>
-      </div>
-
-      <div class="mt-5 mx-auto CustomWidth">
-        <div class="row">
-          @foreach ($blogs as $blog)
-          <div class="col-md-4 py-3 py-md-0">
-            <div class="card bg-CustomBrown border-0">
-              <img src="/img/{{$blog->image}}" class="card-img-center float-center rounded-0" alt="" />
-              <div class="card-body text-CustomWhite">
-                <div
-                    class="card-body col-12 px-0 py-auto text-CustomWhite d-flex flex-column flex-md-row align-self-center"
-                >
-                    <h5 class="card-title col-12 col-md-6 px-0 headlines"><span class="text-CustomPrimary">От: </span>{{$blog->author}}</h5>
-                    
-                    <h5 class="card-text col-12 col-md-6 px-0 text-md-end">{{ $blog->created_at->format('d.m.Y') }}</h5>
+<section class="my-md-5 mb-3" id="blog-detail">
+        <div class="container">
+            <div class="mb-5">
+                <h5 class="text-CustomPrimary text-center">Блог</h5>
+                <h1 class="text-CustomWhite text-center headlines mx-5 px-3">
+                    {{ $blog->title }}
+                </h1>
+                <div class="text-center mt-3">
+                    <span class="text-CustomPrimary">Автор: {{ $blog->author }}</span>
+                    <span class="text-CustomWhite"> | {{ $blog->created_at->format('d.m.Y') }}</span>
                 </div>
-
-                <div 
-                    class="card-body col-12 px-0 py-auto text-CustomWhite d-flex flex-column flex-md-row align-self-center"
-                >
-                    <h3 class="headlines">{{$blog->title}}</h3>
-                </div>
-                <div 
-                    class="card-body col-12 px-0 py-auto text-CustomWhite d-flex flex-column flex-md-row align-self-center"
-                >
-                    <a href="{{ route('blog.show', $blog->id) }}" class="text-CustomPrimary text-decoration-none d-flex align-items-center" style="gap: 8px">
-                      <h5 class="mb-0">Читать дальше</h5>
-                      <span class="material-icons-outlined">arrow_forward</span>
-                    </a>
-                </div>
-
-              </div>
-
             </div>
-          </div>
-          @endforeach
-          </div>
-        </div>
-      </div>
-      
-    </section>
 
-    
+            <div class="mt-5 mx-auto CustomWidth">
+                <div class="card bg-CustomBrown border-0">
+                    <img src="/img/{{ $blog->image }}" class="card-img-top" alt="{{ $blog->title }}">
+                    <div class="card-body text-CustomWhite">
+                        <div class="card-text py-4 fs-5">
+                            {!! nl2br(e($blog->description)) !!}
+                        </div>
+                        <a href="{{ route('blog.page') }}" class="btn btn-CustomDimPrimary">
+                            <i class="fas fa-arrow-left me-2"></i>Назад к блогам
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
 @endsection

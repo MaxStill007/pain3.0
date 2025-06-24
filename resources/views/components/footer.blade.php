@@ -1,5 +1,5 @@
 <footer id="footer" class="container text-CustomWhite text-center bg-CustomBrown CustomWidth pt-4 pb-2">
-        <h1 class="headlines">Logo</h1>
+        <h1 class="headlines">PowerApp</h1>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus
           fugiat, ipsa quos nulla qui alias.
