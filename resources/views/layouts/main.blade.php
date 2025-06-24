@@ -42,6 +42,8 @@
     <!--Custom CSS style-->
     @vite('resources/css/style.css')
 
+    <!-- Подключение API Яндекс.Карт -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=383e1788-f0e5-4504-817b-7eb11cde62ad&lang=ru_RU" type="text/javascript"></script>
 
   </head>
 

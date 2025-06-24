@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <section id="navbar">
+<section id="navbar">
       <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
         <div class="container">
           <!--Logo-->
@@ -51,13 +51,13 @@
                   >
                 </li>
                 <li class="nav-item mx-2">
-                  <a class="nav-link active" href="{{ url('/product') }}">Портфолио</a>
+                  <a class="nav-link" href="{{ url('/product') }}">Портфолио</a>
                 </li>
                 <li class="nav-item mx-2">
                   <a class="nav-link" href="{{ url('/blog') }}">Блог</a>
                 </li>
                 <li class="nav-item mx-2">
-                  <a class="nav-link" href="{{ url('/contact') }}">Контакты</a>
+                  <a class="nav-link active" href="{{ url('/contact') }}">Контакты</a>
                 </li>
               </ul>
 
@@ -95,64 +95,5 @@
           </div>
         </div>
       </nav>
-    </section>
-
-    <!--Reason Section-->
-    <section class="about bg-CustomBrown" id="about">
-      <div class="container pb-4 CustomWidth">
-        <div class="row d-flex flex-column flex-md-row border-0">
-          <div class="col-10 col-md-6 py-0 px-0 mx-auto mx-md-0">
-            <div class="card border-0 pt-4 bg-CustomBrown">
-              <img
-                src="/img/reason-1.jpg"
-                class="card-img-center float-center rounded-2"
-                alt=""
-              />
-            </div>
-          </div>
-
-          <div class="col-md-6 py-3 py-md-4 px-5 my-md-auto text-CustomWhite">
-            <h5 class="text-CustomPrimary">Личное портфолио</h5>
-            <h1 class="headlines">Преимущества на рынке разработки на заказ</h1>
-            <p class="mt-md-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-              perferendis dolorem, numquam earum at nam beatae voluptate natus
-              consectetur facere, saepe cupiditate ut exercitationem deserunt,
-              facilis quam perspiciatis autem iure illo harum minima. Quas,
-              vitae aperiam laudantium alias asperiores nulla rerum, nihil
-              eveniet perferendis sint illum accusamus officiis aliquam nam.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="my-md-5" id="example">
-      <div class="my-5 pt-5">
-        <h5 class="text-CustomPrimary text-center">Портфолио</h5>
-        <h1 class="text-CustomWhite text-center headlines mx-5 px-3">
-          Перечень проектов
-        </h1>
-      </div>
-
-      <div class="container CustomWidth mt-3 mt-md-5">
-        <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
-        
-          <a href="{{ route('product.page') }}" 
-              class="btn headlines fs-6 px-4 py-3 rounded-3 {{ !$activeCategory ? 'btn-CustomDimPrimary text-CustomWhite' : 'btn-light text-dark' }}">
-              Все продукты
-          </a>
-        
-          @foreach($categories as $key => $name)
-            <a href="{{ route('product.page', ['category' => $key]) }}" 
-               class="btn headlines fs-6 px-4 py-3 rounded-3 {{ $activeCategory === $key ? 'btn-CustomDimPrimary text-CustomWhite' : 'btn-light text-dark' }}">
-                {{ $name }}
-            </a>
-          @endforeach
-        </div>
-      </div>
-      
-      @include('components.portfolio')
-      
-    </section>
+</section>
 @endsection

@@ -57,7 +57,7 @@
                   <a class="nav-link active" href="{{ url('/blog') }}">Блог</a>
                 </li>
                 <li class="nav-item mx-2">
-                  <a class="nav-link" href="#">Контакты</a>
+                  <a class="nav-link" href="{{ url('/contact') }}">Контакты</a>
                 </li>
               </ul>
 

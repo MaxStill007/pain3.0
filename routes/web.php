@@ -8,6 +8,8 @@ use App\Http\Controllers\OrderController;
 Route::get('/', [PageController::class, 'index']);
 Route::get('/product', [PageController::class, 'product'])->name('product.page');
 Route::get('/blog', [PageController::class, 'blog'])->name('blog.page');
+Route::get('/contact', [PageController::class, 'contacts'])->name('contacts.page');
+
 // Маршруты аутентификации с верификацией
 Auth::routes(['verify' => true]);
 

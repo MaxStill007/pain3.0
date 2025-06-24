@@ -47,4 +47,10 @@ class PageController extends Controller
         $blog = blogs::findOrFail($id);
         return view('pages.blog-detail', compact('blog'), ['social' => $social]);
     }
+
+    public function contacts()
+    {
+        $social = DB::table('socials')->get();
+        return view('pages.contacts', ['social' => $social]);
+    }
 }
