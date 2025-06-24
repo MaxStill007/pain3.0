@@ -1,4 +1,5 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
     <meta charset="UTF-8">
     <meta name="description" content="Веб-сервис для разработки различного вида программного обеспеччения на заказ.">
@@ -6,35 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="180">
     
-    <title>Блог</title>
+    <link rel="icon" href="{{ asset('img/logo.svg') }}" type="image/svg+xml">
+    <link rel="icon" href="{{ asset('img/logo.svg') }}" type="image/svg+xml" sizes="any">
+
+    
+    <title>PowerApp</title>
 
     <!--Bootstrap style-->
-    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    @vite('resources/css/bootstrap.css')
     
-    <!--Bootstrap script-->
-    <script
-      defer
-      src="/js/bootstrap.bundle.min.js"
-    ></script>
+    <!--App script-->
+    @vite('resources/js/app.js')
+       
+    <!--Bootstrap, CardCarousel JS-->
+    @vite('resources/js/bootstrap.bundle.min.js')
+    @vite('resources/js/cardcarousel.js')
+    @vite('resources/js/modal.js')
 
-    <!--JQuery script-->
-    <script
-      defer
-      src="/js/jquery.js"
-    ></script>
-
-    <!--Custom JS script-->
-    <script
-      defer
-      src="/js/cardcarousel.js"
-    ></script>
-    
     <!-- Font Awesome Cdn -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
-    
+
+    <!--Jquery JS-->
+    @vite('resources/js/jquery.js')
+
     <!--Google Fonts-->
     <link
       rel="stylesheet"
@@ -42,9 +40,20 @@
     />
     
     <!--Custom CSS style-->
-    <link rel="stylesheet" href="/css/style.css" />
+    @vite('resources/css/style.css')
+
+
   </head>
 
-  <body class="vh-100 bg-CustomDark">
-  </body>
+    <body class="vh-100 bg-CustomDark">
+        <main>
+            @yield('content')
+        </main>
+        
+
+        <section class="bg-CustomBrown">
+            @include('components.footer')
+        </section>
+
+    </body>
 </html>
