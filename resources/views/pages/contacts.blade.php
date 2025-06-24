@@ -96,4 +96,70 @@
         </div>
       </nav>
 </section>
+
+
+
+<section class="contacts mb-5 bg-CustomBrown" id="contacts">
+    <div class="mt-2 mb-5 pt-1 pb-5 bg-CustomDark">
+        <h5 class="text-CustomPrimary text-center">Наши контакты</h5>
+        <h1 class="text-CustomWhite text-center headlines mx-5 px-3">
+          Как с нами связаться
+        </h1>
+    </div>
+
+    <div class="container pb-4 CustomWidth">
+        <div class="row d-flex flex-column flex-md-row border-0">
+            <div class="col-md-5 py-4 px-4 my-md-auto text-CustomWhite order-2 order-md-1">
+                <div>
+                    <div class="d-flex align-items-start mb-3">
+                        <i class="fas fa-map-marker-alt me-3 mt-1 text-CustomPrimary"></i>
+                        <div>
+                            <h4 class="headlines">Адреса офисов</h4>
+                            <p class="mb-1">Москва, ул. Тверская, д. 7</p>
+                            <p class="mb-1">Санкт-Петербург, Невский пр-т, д. 28</p>
+                            <p>Екатеринбург, ул. Ленина, д. 52</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-start mb-3">
+                        <i class="fas fa-phone-alt me-3 mt-1 text-CustomPrimary"></i>
+                        <div>
+                            <h4 class="headlines">Телефоны</h4>
+                            <p class="mb-1">+7 (495) 123-45-67</p>
+                            <p>+7 (800) 100-20-30</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-start mb-3">
+                        <i class="fas fa-envelope me-3 mt-1 text-CustomPrimary"></i>
+                        <div>
+                            <h4 class="headlines">Email</h4>
+                            <p class="mb-1">info@powerapp.ru</p>
+                            <p>support@powerapp.ru</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-start">
+                        <i class="fas fa-clock me-3 mt-1 text-CustomPrimary"></i>
+                        <div>
+                            <h4 class="headlines">Часы работы</h4>
+                            <p class="mb-1">Пн-Пт: 9:00 - 18:00</p>
+                            <p>Сб-Вс: выходной</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--Yandex Maps JS-->
+            @vite('resources/js/yamap.js')
+
+            <div class="col-md-7 py-0 px-0 mx-auto mx-md-0 order-1 order-md-2">
+                <div id="map" style="width: 100%; height: 500px; background: #eee;"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
 @endsection

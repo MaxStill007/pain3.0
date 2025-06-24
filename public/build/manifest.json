@@ -55,6 +55,12 @@
     "src": "resources/js/modal.js",
     "isEntry": true
   },
+  "resources/js/yamap.js": {
+    "file": "assets/yamap-Cyk8tGla.js",
+    "name": "yamap",
+    "src": "resources/js/yamap.js",
+    "isEntry": true
+  },
   "resources/sass/app.scss": {
     "file": "assets/app-B_jciIra.css",
     "src": "resources/sass/app.scss",

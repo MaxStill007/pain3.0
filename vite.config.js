@@ -14,6 +14,7 @@ export default defineConfig({
                 'resources/js/jquery.js',
                 'resources/js/modal.js',
                 'resources/js/app.js',
+                'resources/js/yamap.js',
             ],
             refresh: true,
         }),

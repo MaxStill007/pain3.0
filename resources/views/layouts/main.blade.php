@@ -33,6 +33,7 @@
     <!--Jquery JS-->
     @vite('resources/js/jquery.js')
 
+
     <!--Google Fonts-->
     <link
       rel="stylesheet"
