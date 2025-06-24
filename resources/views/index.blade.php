@@ -256,7 +256,7 @@
         </h1>
       </div>
 
-      @include('components.product')
+      @include('components.portfolio')
       
       <div class="container CustomWidth mt-3 mt-md-5 d-flex aligh-items-center justify-content-center">
         <button

@@ -152,7 +152,7 @@
         </div>
       </div>
       
-      @include('components.product')
+      @include('components.portfolio')
       
     </section>
 @endsection
