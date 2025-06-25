@@ -1,13 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container bg-CustomDark">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+            <div class="card bg-CustomBorder">
+                <div class="card-header">
+                    <h4 class="mb-0 text-CustomWhite headlines">{{ __('Сброс пароля') }}</h4>
+                </div>
 
-                <div class="card-body">
+                <div class="card-body text-CustomWhite">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -33,8 +35,8 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
+                                <button type="submit" class="btn btn-CustomPrimary border-3 border-CustomPrimary text-CustomWhite">
+                                    {{ __('Отправить ссылку для сброса пароля') }}
                                 </button>
                             </div>
                         </div>

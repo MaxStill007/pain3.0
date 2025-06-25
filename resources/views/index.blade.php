@@ -3,7 +3,7 @@
 @section('content')
     <!--NavBar-->
     <section id="navbar">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-transparent border-bottom border-CustomBorder border-3">
         <div class="container">
           <!--Logo-->
           <a class="navbar-brand d-flex align-items-center me-0"  href="{{ url('/') }}">
