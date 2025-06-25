@@ -4,7 +4,7 @@
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card bg-CustomDark text-CustomWhite shadow-lg">
+            <div class="card bg-CustomBorder text-CustomWhite shadow-lg">
                 <div class="card-header bg-CustomOrange text-dark">
                     <h4 class="mb-0 text-CustomWhite headlines">{{ __('Создать новый заказ') }}</h4>
                 </div>
