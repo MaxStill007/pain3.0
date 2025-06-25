@@ -39,7 +39,7 @@ class OrderController extends Controller
             'status' => 'pending'
         ]);
 
-        return redirect()->route('home')->with('success', 'Заказ успешно создан!');
+        return redirect()->route('profile.orders')->with('success', 'Заказ успешно создан!');
     }
 
     // Остальные методы можно оставить пустыми или удалить
