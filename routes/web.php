@@ -20,6 +20,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Маршруты для заказов
     Route::get('/order/create', [OrderController::class, 'create'])->name('order.create');
     Route::post('/order', [OrderController::class, 'store'])->name('order.store');
+
+    Route::get('/orders/profile', [OrderController::class, 'userOrders'])
+        ->name('profile.orders');
 });
 
 Route::get('/blog/{id}', [PageController::class, 'showBlog'])->name('blog.show');

@@ -67,6 +67,8 @@
                     <ul class="navbar-nav ms-md-5 me-auto">
                         @auth
                         <li class="nav-item">
+                            <a class="nav-link text-CustomWhite" href="{{ route('profile.orders') }}">{{ __('Мои заказы') }}</a>
+                        <li class="nav-item">
                             <a class="nav-link text-CustomWhite" href="{{ route('order.create') }}">{{ __('Новый заказ') }}</a>
                         </li>
                         @endauth

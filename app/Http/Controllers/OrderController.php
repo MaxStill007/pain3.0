@@ -13,6 +13,15 @@ class OrderController extends Controller
         return view('orders.order');
     }
 
+    public function userOrders()
+    {
+        $orders = Orders::where('user_email', Auth::user()->email)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('orders.profile', compact('orders'));
+    }
+
     public function store(Request $request)
     {
         $request->validate([
