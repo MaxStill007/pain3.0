@@ -26,6 +26,7 @@
        
     <!--CardCarousel JS-->
     @vite('resources/js/cardcarousel.js')
+    @vite('resources/js/orderModal.js')
     @vite('resources/js/modal.js')
 
     <!-- Font Awesome Cdn -->

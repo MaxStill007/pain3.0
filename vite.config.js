@@ -15,6 +15,7 @@ export default defineConfig({
                 'resources/js/modal.js',
                 'resources/js/app.js',
                 'resources/js/yamap.js',
+                'resources/js/orderModal.js',
             ],
             refresh: true,
         }),
